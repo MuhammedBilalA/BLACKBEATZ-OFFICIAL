@@ -129,6 +129,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                     ),
                                   ),
                                   PlayerBuilder.isPlaying(
+
                                     player: playerMini,
                                     builder: (context, isPlaying) {
                                       return Row(

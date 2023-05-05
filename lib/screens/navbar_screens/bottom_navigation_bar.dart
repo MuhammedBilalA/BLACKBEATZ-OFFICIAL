@@ -13,7 +13,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
 
@@ -197,14 +196,13 @@ class _NavBarState extends State<NavBar> {
           InkWell(
             onTap: () async {
               await Share.share(
-                  'https://play.google.com/store/apps/details?id=com.blackbee.blackbeatz');
+                  'https://play.google.com/store/apps/details?id=com.brototype.black_beatz');
             },
             child: DrawerlistCustom(
               title: 'Share',
               icon: FontAwesomeIcons.cloudsmith,
             ),
           ),
-         
           Padding(
             padding: const EdgeInsets.only(left: 16),
             child: Row(
