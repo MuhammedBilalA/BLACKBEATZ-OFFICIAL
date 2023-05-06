@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
+
 final AssetsAudioPlayer playerMini = AssetsAudioPlayer.withId('0');
 
 Songs? currentlyplaying;

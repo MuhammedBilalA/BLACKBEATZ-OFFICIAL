@@ -171,7 +171,12 @@ class Fetching {
         }
       }
 
-      mostplayedTemp = mostplayedTemp.sublist(0, 10);
+     List<List<int>> temp = [];
+  for (int i = 0; i < mostplayedTemp.length && i < 10; i++) {
+    temp.add(mostplayedTemp[i]);
+  }
+
+  mostplayedTemp = temp;
       for (List<int> element in mostplayedTemp) {
         for (Songs song in allSongs) {
           if (element[0] == song.id && element[1] > 3) {
