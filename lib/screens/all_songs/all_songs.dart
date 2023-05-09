@@ -1,3 +1,4 @@
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/hearticon.dart';
 import 'package:black_beatz/screens/common_widgets/listtilecustom.dart';
 import 'package:black_beatz/screens/common_widgets/splash_screen.dart';
@@ -40,14 +41,14 @@ class _AllSongsState extends State<AllSongs> {
     if (currentlyplaying != null) {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         showBottomSheet(
-            backgroundColor: Colors.transparent,
+            backgroundColor: transparentColor,
             context: context,
             builder: (context) => const MiniPlayer());
       });
     }
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+      backgroundColor: backgroundColorDark,
       body: ValueListenableBuilder(
         valueListenable: allsongBodyNotifier,
         builder: (context, value, child) =>
@@ -80,12 +81,12 @@ class _AllSongsState extends State<AllSongs> {
                   allSongs[index].songName ??= 'unknown',
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                      fontWeight: FontWeight.bold, color: whiteColor),
                 ),
                 subtitle: Text(
                   '${allSongs[index].artist}',
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: whiteColor),
                 ),
                 leading: QueryArtworkWidget(
                   size: 3000,
@@ -110,10 +111,10 @@ class _AllSongsState extends State<AllSongs> {
                 trailing2: PopupMenuButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
-                    color: const Color.fromARGB(255, 45, 10, 67),
+                    color: backgroundColorDark,
                     icon: const FaIcon(
                       FontAwesomeIcons.ellipsisVertical,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: textColorLight,
                       size: 26,
                     ),
                     onSelected: (value) {
@@ -133,14 +134,14 @@ class _AllSongsState extends State<AllSongs> {
                                 Text(
                                   'ADD TO PLAYLIST',
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: whiteColor,
                                       fontWeight: FontWeight.w400,
                                       fontFamily: 'Peddana',
                                       fontSize: 18),
                                 ),
                                 Icon(
                                   Icons.playlist_add,
-                                  color: Colors.white,
+                                  color: whiteColor,
                                 )
                               ],
                             ),

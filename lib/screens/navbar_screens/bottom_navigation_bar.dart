@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:black_beatz/database/songs/songs_db_functions/songs_db_functions.dart';
 import 'package:black_beatz/screens/all_songs/all_songs.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/home_screens/home_screen.dart';
 import 'package:black_beatz/screens/navbar_screens/privacy_policy_screen.dart';
 import 'package:black_beatz/screens/navbar_screens/terms_and_conditions_screen.dart';
@@ -60,11 +61,11 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+      backgroundColor: backgroundColorDark,
       drawer: drawermethod(),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 47, 2, 75),
+        backgroundColor: appBarBackgroundColor,
         title: titles[index],
         actions: [
           IconButton(
@@ -77,7 +78,7 @@ class _NavBarState extends State<NavBar> {
                       child: Container(
                         width: 60,
                         height: 60,
-                        color: Colors.transparent,
+                        color: transparentColor,
                         child: const CircularProgressIndicator(
                           color: Color.fromARGB(255, 200, 111, 255),
                           strokeWidth: 6,
@@ -117,22 +118,22 @@ class _NavBarState extends State<NavBar> {
 
   CurvedNavigationBar curvedNavBar() {
     return CurvedNavigationBar(
-      backgroundColor: Colors.transparent,
-      color: const Color.fromARGB(255, 19, 2, 24),
+      backgroundColor: transparentColor,
+      color: curvedNavBarColor,
       index: index,
       items: [
         FaIcon(FontAwesomeIcons.houseChimney,
             color: (pressedButtonNo == 0)
-                ? (Colors.white)
-                : const Color.fromARGB(255, 204, 132, 249)),
+                ? (whiteColor)
+                :  curvedNavBarIconColor),
         FaIcon(FontAwesomeIcons.indent,
             color: (pressedButtonNo == 1)
-                ? (Colors.white)
-                : const Color.fromARGB(255, 204, 132, 249)),
+                ? (whiteColor)
+                :  curvedNavBarIconColor),
         FaIcon(FontAwesomeIcons.userLarge,
             color: (pressedButtonNo == 2)
-                ? (Colors.white)
-                : const Color.fromARGB(255, 204, 132, 249)),
+                ? (whiteColor)
+                :  curvedNavBarIconColor),
       ],
       height: 60,
       onTap: (index) => setState(() {
@@ -144,7 +145,7 @@ class _NavBarState extends State<NavBar> {
 
   Drawer drawermethod() {
     return Drawer(
-      backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+      backgroundColor: backgroundColorDark,
       child: Column(
         children: [
           SizedBox(
@@ -211,14 +212,14 @@ class _NavBarState extends State<NavBar> {
                 Text(
                   'Notification',
                   style: TextStyle(
-                    color: const Color(0xFFC3DCEA),
+                    color:  drawerlistTextColor,
                     fontWeight: FontWeight.w600,
                     fontSize: MediaQuery.of(context).size.height * 0.018,
                     // fontSize: 16,
                   ),
                 ),
                 Switch(
-                  activeColor: const Color.fromARGB(255, 136, 24, 206),
+                  activeColor: notificationSwitchColor,
                   value: notification,
                   onChanged: (value) {
                     setState(() {
@@ -238,7 +239,7 @@ class _NavBarState extends State<NavBar> {
               Text(
                 'VERSION 1.0.0',
                 style: TextStyle(
-                    color: const Color.fromARGB(255, 233, 230, 230),
+                    color:  versionTextColor,
                     fontSize: MediaQuery.of(context).size.height * 0.008,
                     fontWeight: FontWeight.w400),
               ),
@@ -254,7 +255,7 @@ class _NavBarState extends State<NavBar> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            backgroundColor: const Color(0xFF39044D),
+            backgroundColor: aboutUsBackgroundColor,
             title: SizedBox(
                 height: 50,
                 width: MediaQuery.of(context).size.width * 0.6,
@@ -262,7 +263,7 @@ class _NavBarState extends State<NavBar> {
             content: const Text(
               'BLACK BEATZ is the ultimate music player for those  who love to groove to the rhythm of their favorite tunes .if you are looking for a music player that can handle any genre, any mood, and any occasion, look no further than BLACK BEATZ .BLACK BEATZ is more than a music player. it’s your musical companion . Get yours now and feel the beast',
               style: TextStyle(
-                  color: Colors.white, fontFamily: 'Peddana', fontSize: 19),
+                  color: whiteColor, fontFamily: 'Peddana', fontSize: 19),
             ),
             actions: [
               Column(
@@ -271,9 +272,7 @@ class _NavBarState extends State<NavBar> {
                   const Text(
                     'Created by :- MUHAMMED BILAL A',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Peddana',
-                        fontSize: 19),
+                        color: whiteColor, fontFamily: 'Peddana', fontSize: 19),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -283,7 +282,7 @@ class _NavBarState extends State<NavBar> {
                         child: Text(
                           'Contact Developer :-',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: whiteColor,
                               fontFamily: 'Peddana',
                               fontSize: 19),
                         ),
@@ -397,7 +396,7 @@ class DrawerlistCustom extends StatelessWidget {
         leading: Text(
           title,
           style: TextStyle(
-            color: const Color(0xFFC3DCEA),
+            color:  drawerlistTextColor,
             fontWeight: FontWeight.w600,
             fontSize: MediaQuery.of(context).size.height * 0.018,
             // fontSize: 16,
@@ -406,7 +405,7 @@ class DrawerlistCustom extends StatelessWidget {
         trailing: FaIcon(
           icon,
           size: MediaQuery.of(context).size.height * 0.024,
-          color: const Color(0xFFC3DCEA),
+          color:  drawerlistTextColor,
         ),
       ),
     );

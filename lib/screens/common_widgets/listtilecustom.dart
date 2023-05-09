@@ -1,3 +1,4 @@
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,14 +27,9 @@ class ListtileCustomWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         gradient: const LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.centerLeft,
-          colors: [
-            Color.fromARGB(255, 93, 5, 148),
-            Color.fromARGB(255, 161, 9, 255),
-            Color.fromARGB(255, 169, 33, 254),
-          ],
-        ),
+            begin: Alignment.topRight,
+            end: Alignment.centerLeft,
+            colors: listtileCustomWidgetGradient),
       ),
       height: 75,
       child: Row(

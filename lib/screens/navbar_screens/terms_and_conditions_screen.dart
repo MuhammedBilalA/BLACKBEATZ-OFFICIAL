@@ -1,3 +1,4 @@
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,9 +9,9 @@ class TermsAndConditionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+      backgroundColor: backgroundColorDark,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+        backgroundColor: backgroundColorDark,
         title: const Text(
           'TERMS AND CONDITIONS',
           style: TextStyle(
@@ -39,7 +40,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
               const Text(
                 'Terms & Conditions',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: whiteColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 16),
               ),
@@ -77,7 +78,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
                   ),
                   Icon(
                     Icons.circle,
-                    color: Colors.yellow,
+                    color: yellowColor,
                     size: 5,
                   ),
                   SizedBox(
@@ -86,7 +87,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
                   Text(
                     "Google Play Services",
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: blueColor,
                       decoration: TextDecoration.underline,
                       fontSize: 14,
                     ),
@@ -103,7 +104,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
                   ),
                   Icon(
                     Icons.circle,
-                    color: Colors.yellow,
+                    color: yellowColor,
                     size: 5,
                   ),
                   SizedBox(
@@ -112,7 +113,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
                   Text(
                     "Facebook",
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: blueColor,
                       decoration: TextDecoration.underline,
                       fontSize: 14,
                     ),
@@ -148,7 +149,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
               const Text(
                 'Changes to this Terms and Conditions',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: whiteColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 16),
               ),
@@ -166,7 +167,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
               const Text(
                 'Contact Us',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: whiteColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 16),
               ),
@@ -183,7 +184,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
               const Text(
                 "App Privacy Policy Generator",
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: blueColor,
                   decoration: TextDecoration.underline,
                   fontSize: 14,
                 ),
@@ -203,7 +204,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
 
   termstyle() {
     return const TextStyle(
-      color: Colors.white,
+      color: whiteColor,
       fontSize: 14,
       fontWeight: FontWeight.w500,
     );

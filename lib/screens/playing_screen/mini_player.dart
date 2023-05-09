@@ -1,12 +1,12 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:black_beatz/database/mostlyplayed/mostlyplayed.dart';
 import 'package:black_beatz/database/songs/songs_db_model/songs_db_model.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/playing_screen/play_screen.dart';
 import 'package:black_beatz/screens/playing_screen/player_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-
 
 final AssetsAudioPlayer playerMini = AssetsAudioPlayer.withId('0');
 
@@ -41,14 +41,9 @@ class _MiniPlayerState extends State<MiniPlayer> {
           child: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Color.fromARGB(255, 30, 29, 29),
-                  Color.fromARGB(255, 12, 16, 72),
-                  Color(0xFF53147A),
-                ],
-              ),
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: miniplayerGradient),
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(3),
                   bottomRight: Radius.circular(3),
@@ -126,11 +121,10 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                                   .width *
                                               0.035,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                          color: whiteColor),
                                     ),
                                   ),
                                   PlayerBuilder.isPlaying(
-
                                     player: playerMini,
                                     builder: (context, isPlaying) {
                                       return Row(
@@ -153,7 +147,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                                         .size
                                                         .width *
                                                     0.065,
-                                                color: Colors.white,
+                                                color: whiteColor,
                                               )),
                                           IconButton(
                                               onPressed: () {
@@ -170,7 +164,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                                         .size
                                                         .width *
                                                     0.065,
-                                                color: Colors.white,
+                                                color: whiteColor,
                                               )),
                                           IconButton(
                                               onPressed: () async {
@@ -183,7 +177,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                               },
                                               icon: Icon(
                                                 Icons.skip_next,
-                                                color: Colors.white,
+                                                color: whiteColor,
                                                 size: MediaQuery.of(context)
                                                         .size
                                                         .width *
@@ -196,7 +190,6 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                 ],
                               ),
                               SizedBox(
-                                // height: 4,
                                 height:
                                     MediaQuery.of(context).size.width * 0.003,
                               ),
@@ -232,9 +225,8 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                             }
                                             return LinearProgressIndicator(
                                               backgroundColor:
-                                                  const Color.fromARGB(
-                                                      255, 70, 62, 62),
-                                              color: Colors.greenAccent,
+                                                  linearProgressIndicatorBackgroundColor,
+                                              color: greenAccentColor,
                                               minHeight: 2.5,
                                               value: value,
                                             );

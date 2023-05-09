@@ -1,6 +1,7 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:black_beatz/database/mostlyplayed/mostlyplayed.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/hearticon.dart';
 import 'package:black_beatz/screens/common_widgets/snackbar.dart';
 import 'package:black_beatz/screens/favourite_screens/favourite.dart';
@@ -31,10 +32,10 @@ class _PlayScreenState extends State<PlayScreen> {
   Widget build(BuildContext context) {
     bool isEnteredToMostlyPlayed = false;
     return Scaffold(
-      backgroundColor: const Color(0xFF53147A),
+      backgroundColor: backgroundColorLight,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color.fromARGB(255, 3, 6, 33),
+        backgroundColor: playScreenAppBarColor,
         title: const Text(
           'NOW PLAYING',
           style: TextStyle(
@@ -45,14 +46,9 @@ class _PlayScreenState extends State<PlayScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.centerLeft,
-            colors: [
-              Color(0xFF000000),
-              Color(0xFF0B0E38),
-              Color(0xFF53147A),
-            ],
-          ),
+              begin: Alignment.topRight,
+              end: Alignment.centerLeft,
+              colors: playScreenGradient),
         ),
         child: playerMini.builderCurrent(builder: (context, playing) {
           int id = int.parse(playing.audio.audio.metas.id!);
@@ -71,7 +67,7 @@ class _PlayScreenState extends State<PlayScreen> {
                           BoxShadow(
                               blurStyle: BlurStyle.outer,
                               blurRadius: 10,
-                              color: Color.fromARGB(255, 140, 137, 137))
+                              color: playScreenBoxShadowColor)
                         ],
                         borderRadius: BorderRadius.circular(170),
                         color: const Color.fromARGB(255, 6, 6, 0)),
@@ -111,7 +107,7 @@ class _PlayScreenState extends State<PlayScreen> {
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w900,
-                          color: Colors.white,
+                          color: whiteColor,
                         ),
                       ),
                     ),
@@ -130,7 +126,7 @@ class _PlayScreenState extends State<PlayScreen> {
                   style: const TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    color: whiteColor,
                   ),
                 ),
                 Padding(
@@ -153,13 +149,13 @@ class _PlayScreenState extends State<PlayScreen> {
                     return ProgressBar(
                       progress: currentposition,
                       total: totalduration,
-                      progressBarColor: const Color.fromARGB(255, 182, 75, 249),
-                      baseBarColor: const Color.fromARGB(190, 255, 255, 255),
-                      bufferedBarColor: const Color.fromARGB(255, 182, 75, 249),
+                      progressBarColor: playScreenProgressBarColor,
+                      baseBarColor: playScreenProgressBarBackgroundColor,
+                      bufferedBarColor: playScreenProgressBarColor,
                       timeLabelTextStyle: const TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: textColorLight,
                       ),
-                      thumbColor: const Color.fromARGB(255, 182, 75, 249),
+                      thumbColor: playScreenProgressBarColor,
                       onSeek: (to) {
                         playerMini.seek(to);
                       },
@@ -185,7 +181,7 @@ class _PlayScreenState extends State<PlayScreen> {
                         borderRadius: BorderRadius.circular(35),
                         child: const Icon(
                           Icons.skip_previous_rounded,
-                          color: Colors.white,
+                          color: whiteColor,
                           size: 50,
                         ),
                       ),
@@ -196,7 +192,7 @@ class _PlayScreenState extends State<PlayScreen> {
                         player: playerMini,
                         builder: (context, isPlaying) => InkWell(
                           radius: 150,
-                          splashColor: Colors.white,
+                          splashColor: whiteColor,
                           autofocus: true,
                           borderRadius: BorderRadius.circular(70),
                           onTap: () {
@@ -209,7 +205,7 @@ class _PlayScreenState extends State<PlayScreen> {
                             height: 120,
                             width: 120,
                             decoration: BoxDecoration(
-                              color: Colors.transparent,
+                              color: transparentColor,
                               borderRadius: BorderRadius.circular(120),
                             ),
                             child: Center(
@@ -221,26 +217,21 @@ class _PlayScreenState extends State<PlayScreen> {
                                     begin: Alignment.topRight,
                                     end: Alignment.centerLeft,
                                     transform: GradientRotation(8),
-                                    colors: [
-                                      Color.fromARGB(255, 57, 7, 87),
-                                      Color.fromARGB(255, 110, 12, 170),
-                                      Color.fromARGB(255, 167, 32, 251),
-                                    ],
+                                    colors:playOrPauseGradient
                                   ),
                                   borderRadius: BorderRadius.circular(40),
-                                  color:
-                                      const Color.fromARGB(255, 182, 75, 249),
+                                  color: playScreenProgressBarColor,
                                 ),
                                 child: (isPlaying)
                                     ? const Icon(
                                         Icons.pause,
                                         size: 45,
-                                        color: Colors.white,
+                                        color: whiteColor,
                                       )
                                     : const Icon(
                                         Icons.play_arrow_rounded,
                                         size: 50,
-                                        color: Colors.white,
+                                        color: whiteColor,
                                       ),
                               ),
                             ),
@@ -261,7 +252,7 @@ class _PlayScreenState extends State<PlayScreen> {
                         borderRadius: BorderRadius.circular(40),
                         child: const Icon(
                           Icons.skip_next_rounded,
-                          color: Colors.white,
+                          color: whiteColor,
                           size: 50,
                         ),
                       ),
@@ -279,18 +270,12 @@ class _PlayScreenState extends State<PlayScreen> {
                         BoxShadow(
                           blurStyle: BlurStyle.outer,
                           blurRadius: 10,
-                    
                         )
                       ],
                       gradient: const LinearGradient(
                         begin: Alignment.bottomCenter,
-
                         end: Alignment.topCenter,
-                        colors: [
-                          Color.fromARGB(255, 93, 5, 148),
-                          Color.fromARGB(255, 161, 9, 255),
-                          Color.fromARGB(255, 169, 33, 254),
-                        ],
+                        colors: playScreenLastContainerGradient
                       ),
                       borderRadius: BorderRadius.circular(30)),
                   child: Row(

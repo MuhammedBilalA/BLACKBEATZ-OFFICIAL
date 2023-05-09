@@ -1,6 +1,7 @@
 import 'package:black_beatz/database/favorite/dbmodel/fav_model.dart';
 import 'package:black_beatz/database/playlist/playlist_model/playlist_model.dart';
 import 'package:black_beatz/database/songs/songs_db_model/songs_db_model.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/splash_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -31,9 +32,9 @@ class BlackBeatz extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
-]);
+    ]);
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: blueColor),
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
     );

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:black_beatz/database/playlist/playlist_function/playlist_function.dart';
 import 'package:black_beatz/database/songs/songs_db_model/songs_db_model.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/snackbar.dart';
 import 'package:black_beatz/screens/playlist_screens/playlist_class.dart';
 import 'package:black_beatz/screens/playlist_screens/playlist_screen.dart';
@@ -39,9 +40,9 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
     screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF53147A),
+      backgroundColor: backgroundColorLight,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF53147A),
+        backgroundColor: backgroundColorLight,
         title: Text(
           'ADD TO PLAYLIST',
           style: TextStyle(
@@ -81,7 +82,7 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
                           width: MediaQuery.of(context).size.width * 0.5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
-                            color: const Color.fromARGB(255, 45, 10, 67),
+                            color: backgroundColorDark,
                           ),
                           child: Center(
                             child: Text(
@@ -92,12 +93,11 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
                                   fontFamily: 'Peddana',
                                   fontWeight: FontWeight.w600,
                                   fontSize: 19,
-                                  color: Colors.white),
+                                  color: whiteColor),
                             ),
                           ),
                         ),
                       ),
-                      // --------------------New playlist------------------------------
                     ),
                   ],
                 ),
@@ -119,7 +119,7 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
                               color: Color(0xFFC0C0C0),
                             ),
                           ),
-                          fillColor: Colors.white.withOpacity(.3),
+                          fillColor: whiteColor.withOpacity(.3),
                           filled: true,
                           hintText: 'Find Playlist',
                           hintStyle: const TextStyle(
@@ -177,7 +177,7 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            backgroundColor: const Color.fromRGBO(240, 182, 255, 1),
+            backgroundColor: alertDialogBackgroundColor,
             content: const Text(
               'Create New Playlist',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -207,7 +207,7 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
                         size: 30,
                       ),
                       border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.red),
+                          borderSide: const BorderSide(color: redColor),
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
@@ -223,7 +223,7 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
                         Navigator.of(context).pop();
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
+                          backgroundColor: redColor,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 22,
                           ),
@@ -236,7 +236,6 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
                   ElevatedButton(
                     onPressed: () {
                       if (playlistFormkey.currentState!.validate()) {
-             
                         playlistCreating(playlistControllor.text);
 
                         setState(() {});
@@ -268,7 +267,7 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
           'Playlist Not Found',
           style: TextStyle(
               fontSize: 25,
-              color: Colors.white,
+              color: whiteColor,
               fontWeight: FontWeight.bold,
               fontFamily: 'Peddana'),
         ),
@@ -355,7 +354,6 @@ class _AddToPlaylistState extends State<AddToPlaylist> {
           },
           child: PlaylistSearchTile(
             title: playlistSearchNotifier.value[index].name,
-
             context: context,
             index: index,
           ),
@@ -434,7 +432,7 @@ class PlaylistSearchTile extends StatelessWidget {
                     fontFamily: 'Peddana',
                     fontSize: 30,
                     height: 1.5,
-                    color: Colors.white,
+                    color: whiteColor,
                     fontWeight: FontWeight.w700),
               ),
               const Spacer(

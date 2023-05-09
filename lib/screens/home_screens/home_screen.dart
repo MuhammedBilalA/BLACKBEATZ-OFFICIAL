@@ -1,3 +1,4 @@
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/home_screens/vertical_scroll.dart';
 import 'package:black_beatz/screens/playing_screen/mini_player.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ import 'horizontal_scroll.dart';
 ValueNotifier homeScreenNotifier = ValueNotifier([]);
 
 class HomeScreen extends StatelessWidget {
-HomeScreen({super.key});
+  HomeScreen({super.key});
 
   bool floaticon = true;
 
@@ -15,14 +16,14 @@ HomeScreen({super.key});
     if (currentlyplaying != null) {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         showBottomSheet(
-            backgroundColor: Colors.transparent,
+            backgroundColor: transparentColor,
             context: context,
             // enableDrag: false,
             builder: (context) => const MiniPlayer());
       });
     }
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+        backgroundColor: backgroundColorDark,
         body: ValueListenableBuilder(
           valueListenable: homeScreenNotifier,
           builder: (context, value, child) => SingleChildScrollView(

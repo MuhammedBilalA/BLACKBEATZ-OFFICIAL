@@ -1,4 +1,5 @@
 import 'package:black_beatz/database/songs/songs_db_model/songs_db_model.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/hearticon.dart';
 import 'package:black_beatz/screens/common_widgets/listtilecustom.dart';
 import 'package:black_beatz/screens/common_widgets/splash_screen.dart';
@@ -41,7 +42,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+        backgroundColor: backgroundColorDark,
         body: Column(
           children: [
             Padding(
@@ -78,7 +79,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     filled: true,
                     hintText: 'Search Song',
                     hintStyle: const TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: textColorLight,
                         fontFamily: 'Peddana',
                         height: .5,
                         fontSize: 25),
@@ -132,7 +133,7 @@ class _SearchScreenState extends State<SearchScreen> {
               playingAudio(allSongs, index);
 
               showBottomSheet(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: transparentColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   context: context,
@@ -147,12 +148,12 @@ class _SearchScreenState extends State<SearchScreen> {
                 allSongs[index].songName ??= 'unknown',
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.white),
+                    fontWeight: FontWeight.bold, color: whiteColor),
               ),
               subtitle: Text(
                 overflow: TextOverflow.ellipsis,
                 allSongs[index].artist ??= 'unknown',
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(color: whiteColor),
               ),
               leading: Container(
                 decoration: BoxDecoration(
@@ -186,10 +187,10 @@ class _SearchScreenState extends State<SearchScreen> {
               trailing2: PopupMenuButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
-                  color: const Color.fromARGB(255, 45, 10, 67),
+                  color: backgroundColorDark,
                   icon: const FaIcon(
                     FontAwesomeIcons.ellipsisVertical,
-                    color: Colors.white,
+                    color: whiteColor,
                     size: 30,
                   ),
                   itemBuilder: (context) => [
@@ -205,7 +206,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             child: const Text(
                               'ADD TO PLAYLIST',
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: whiteColor,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'Peddana',
                                   fontSize: 22),
@@ -228,7 +229,7 @@ class _SearchScreenState extends State<SearchScreen> {
           'Song Not Found',
           style: TextStyle(
               fontSize: 25,
-              color: Colors.white,
+              color: whiteColor,
               fontWeight: FontWeight.bold,
               fontFamily: 'Peddana'),
         ),
@@ -246,14 +247,13 @@ class _SearchScreenState extends State<SearchScreen> {
             playingAudio(data.value, index);
 
             showBottomSheet(
-                backgroundColor: Colors.transparent,
+                backgroundColor: transparentColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 context: context,
                 builder: (context) {
                   return const MiniPlayer();
                 });
-
           },
           child: ListtileCustomWidget(
             index: index,
@@ -262,11 +262,11 @@ class _SearchScreenState extends State<SearchScreen> {
               data.value[index].songName!,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.white),
+                  fontWeight: FontWeight.bold, color: whiteColor),
             ),
             subtitle: Text(
               '${data.value[index].artist}',
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(color: whiteColor),
             ),
             leading: Container(
               decoration: BoxDecoration(
@@ -301,10 +301,10 @@ class _SearchScreenState extends State<SearchScreen> {
             trailing2: PopupMenuButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
-                color: const Color.fromARGB(255, 45, 10, 67),
+                color: backgroundColorDark,
                 icon: const FaIcon(
                   FontAwesomeIcons.ellipsisVertical,
-                  color: Colors.white,
+                  color: whiteColor,
                   size: 30,
                 ),
                 itemBuilder: (context) => [
@@ -319,7 +319,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           child: const Text(
                             'ADD TO PLAYLIST',
                             style: TextStyle(
-                                color: Colors.white,
+                                color: whiteColor,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: 'Peddana',
                                 fontSize: 22),

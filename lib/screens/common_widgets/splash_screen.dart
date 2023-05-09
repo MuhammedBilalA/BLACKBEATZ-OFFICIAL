@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:black_beatz/database/songs/songs_db_functions/songs_db_functions.dart';
 import 'package:black_beatz/database/songs/songs_db_model/songs_db_model.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/welcome_screen_1.dart';
 import 'package:black_beatz/main.dart';
 import 'package:black_beatz/screens/navbar_screens/bottom_navigation_bar.dart';
@@ -32,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+        backgroundColor: backgroundColorDark,
         body: SizedBox(
           height: double.infinity,
           width: double.infinity,

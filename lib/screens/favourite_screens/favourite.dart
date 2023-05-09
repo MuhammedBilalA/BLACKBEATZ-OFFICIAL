@@ -1,4 +1,5 @@
 import 'package:black_beatz/database/songs/songs_db_model/songs_db_model.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/hearticon.dart';
 import 'package:black_beatz/screens/common_widgets/listtilecustom.dart';
 import 'package:black_beatz/screens/playing_screen/mini_player.dart';
@@ -37,7 +38,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
     screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        backgroundColor: const Color(0xFF53147A),
+        backgroundColor: backgroundColorLight,
         appBar: appBarFavorite(context),
         body: ValueListenableBuilder(
           valueListenable: favoritelist,
@@ -46,9 +47,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                   child: Text(
                     'Favourite is empty',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Peddana',
-                        fontSize: 26),
+                        color: whiteColor, fontFamily: 'Peddana', fontSize: 26),
                   ),
                 )
               : favouritebuilderfunction(),
@@ -58,7 +57,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 // appbar of favourite screen
   AppBar appBarFavorite(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color(0xFF53147A),
+      backgroundColor: backgroundColorLight,
       title: const Text(
         'FAVOURITES',
         style: TextStyle(
@@ -108,14 +107,13 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 playingAudio(favoritelist.value, index);
 
                 showBottomSheet(
-                    backgroundColor: Colors.transparent,
+                    backgroundColor: transparentColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     context: context,
                     builder: (context) {
                       return const MiniPlayer();
                     });
-
               },
               child: ListtileCustomWidget(
                 index: index,
@@ -124,11 +122,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                   favoritelist.value[index].songName ??= 'unknown',
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                      fontWeight: FontWeight.bold, color: whiteColor),
                 ),
                 subtitle: Text(
                   favoritelist.value[index].artist ?? 'unknown',
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: whiteColor),
                 ),
                 leading: QueryArtworkWidget(
                   size: 3000,
@@ -162,10 +160,10 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
-                    color: const Color.fromARGB(255, 45, 10, 67),
+                    color: backgroundColorDark,
                     icon: const FaIcon(
                       FontAwesomeIcons.ellipsisVertical,
-                      color: Colors.white,
+                      color: whiteColor,
                       size: 26,
                     ),
                     itemBuilder: (context) => [
@@ -177,14 +175,14 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                 Text(
                                   'ADD TO PLAYLIST',
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: whiteColor,
                                       fontWeight: FontWeight.w400,
                                       fontFamily: 'Peddana',
                                       fontSize: 18),
                                 ),
                                 Icon(
                                   Icons.playlist_add,
-                                  color: Colors.white,
+                                  color: whiteColor,
                                 )
                               ],
                             ),

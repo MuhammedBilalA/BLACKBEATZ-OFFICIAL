@@ -1,4 +1,5 @@
 import 'package:black_beatz/database/playlist/playlist_function/playlist_function.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/hearticon.dart';
 import 'package:black_beatz/screens/common_widgets/listtilecustom.dart';
 import 'package:black_beatz/screens/common_widgets/splash_screen.dart';
@@ -31,9 +32,9 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
     return Scaffold(
       key: scaffoldkey,
       body: Scaffold(
-          backgroundColor: const Color(0xFF53147A),
+          backgroundColor: backgroundColorLight,
           appBar: AppBar(
-            backgroundColor: const Color(0xFF53147A),
+            backgroundColor: backgroundColorLight,
             title: Text(
               widget.playlist.name.toUpperCase(),
               style: const TextStyle(
@@ -58,7 +59,7 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
                 child: IconButton(
                     onPressed: () {
                       scaffoldkey.currentState?.showBottomSheet(
-                          backgroundColor: Colors.transparent,
+                          backgroundColor: transparentColor,
                           (context) => Container(
                                 height:
                                     MediaQuery.of(context).size.height * 0.55,
@@ -67,7 +68,7 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
                                     topLeft: Radius.circular(18),
                                     topRight: Radius.circular(18),
                                   ),
-                                  color: Color.fromARGB(255, 45, 10, 67),
+                                  color: backgroundColorDark,
                                 ),
                                 child: ListView.separated(
                                     itemBuilder: (context, index) {
@@ -103,7 +104,7 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
                               playingAudio(widget.playlist.container, index);
 
                               showBottomSheet(
-                                  backgroundColor: Colors.transparent,
+                                  backgroundColor: transparentColor,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20)),
                                   context: context,
@@ -123,7 +124,7 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
                     child: Text(
                       "ADD SOME SONGS TO ${widget.playlist.name.toUpperCase()}",
                       style: const TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontFamily: 'Peddana',
                           fontSize: 18),
                     ),
@@ -155,12 +156,11 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
       title: Text(
         '${widget.playlist.container[index].songName}',
         overflow: TextOverflow.ellipsis,
-        style:
-            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        style: const TextStyle(fontWeight: FontWeight.bold, color: whiteColor),
       ),
       subtitle: Text(
         "${widget.playlist.container[index].artist}",
-        style: const TextStyle(color: Colors.white),
+        style: const TextStyle(color: whiteColor),
       ),
       trailing1: Hearticon(
         currentSong: widget.playlist.container[index],
@@ -184,10 +184,10 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
           },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          color: const Color.fromARGB(255, 45, 10, 67),
+          color: backgroundColorDark,
           icon: const FaIcon(
             FontAwesomeIcons.ellipsisVertical,
-            color: Colors.white,
+            color: whiteColor,
             size: 26,
           ),
           itemBuilder: (context) => [
@@ -196,7 +196,7 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
                   child: Text(
                     'Add To Playlist',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: whiteColor,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Peddana',
                         fontSize: 20.2),
@@ -207,7 +207,7 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
                   child: Text(
                     'Remove From Playlist',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: whiteColor,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Peddana',
                         fontSize: 20.2),
@@ -254,7 +254,7 @@ class _PlaylistUniqueScreenState extends State<PlaylistUniqueScreen> {
         allSongs[index].songName ??= 'unknown',
         overflow: TextOverflow.ellipsis,
         style: const TextStyle(
-            color: Colors.white,
+            color: whiteColor,
             fontFamily: 'Peddana',
             fontSize: 23,
             fontWeight: FontWeight.w400),
@@ -330,7 +330,7 @@ class _PlusIconState extends State<PlusIcon> {
             )
           : const Icon(
               Icons.remove_circle_outline_outlined,
-              color: Colors.red,
+              color: redColor,
             ),
     );
   }

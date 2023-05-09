@@ -1,3 +1,4 @@
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/favourite_screens/favourite.dart';
 import 'package:black_beatz/screens/playlist_screens/playlist_screen.dart';
 
@@ -31,7 +32,7 @@ class _HorizontalScrollState extends State<HorizontalScroll> {
     screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
-      color: const Color.fromARGB(255, 45, 10, 67),
+      color: backgroundColorDark,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -46,7 +47,7 @@ class _HorizontalScrollState extends State<HorizontalScroll> {
                 transform: Matrix4.translationValues(
                     startAnimation ? 0 : screenWidth, 0, 0),
                 decoration: BoxDecoration(
-                  color: Colors.transparent,
+                  color: transparentColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: ListView(
@@ -98,7 +99,7 @@ class _HorizontalScrollState extends State<HorizontalScroll> {
             child: Text(
               'RECENTLY PLAYED SONGS',
               style: TextStyle(
-                  color: Colors.white,
+                  color: whiteColor,
                   fontWeight: FontWeight.w500,
                   fontSize: 25,
                   fontFamily: 'Peddana'),

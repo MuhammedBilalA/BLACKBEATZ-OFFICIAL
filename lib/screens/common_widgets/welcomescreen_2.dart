@@ -1,4 +1,5 @@
 import 'package:action_slider/action_slider.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/snackbar.dart';
 import 'package:black_beatz/screens/navbar_screens/bottom_navigation_bar.dart';
 import 'package:black_beatz/main.dart';
@@ -52,7 +53,7 @@ class WelcomeScreen2 extends StatelessWidget {
     return const Text(
       'By entering name you will be redirected to the app',
       style: TextStyle(
-          color: Colors.white,
+          color: whiteColor,
           fontStyle: FontStyle.italic,
           fontWeight: FontWeight.w700,
           fontSize: 19,
@@ -62,28 +63,27 @@ class WelcomeScreen2 extends StatelessWidget {
 
   ActionSlider slideToConfirm(BuildContext context) {
     return ActionSlider.standard(
-        backgroundColor: const Color.fromARGB(255, 60, 7, 93),
-        toggleColor: const Color.fromARGB(255, 159, 5, 255),
+        backgroundColor: actionSliderBagroundColorDark,
+        toggleColor: actionSliderToggleColor,
         icon: const Icon(
           Icons.navigate_next,
-          color: Colors.white,
+          color: whiteColor,
         ),
         successIcon: const Icon(
           Icons.check_rounded,
-          color: Colors.white,
+          color: whiteColor,
         ),
         failureIcon: const Icon(
           Icons.close_rounded,
-          color: Colors.white,
+          color: whiteColor,
         ),
-       
         width: 250,
         actionThresholdType: ThresholdType.release,
         child: const Padding(
           padding: EdgeInsets.only(left: 10),
           child: Text(
             'Slide to Confirm',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: whiteColor),
           ),
         ),
         action: (controller) async {
@@ -107,7 +107,7 @@ class WelcomeScreen2 extends StatelessWidget {
       child: Form(
         key: formkey,
         child: TextFormField(
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: whiteColor),
           controller: userNameController,
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -116,12 +116,12 @@ class WelcomeScreen2 extends StatelessWidget {
             return null;
           },
           decoration: InputDecoration(
-              hoverColor: Colors.red,
+              hoverColor: redColor,
               hintText: 'Enter Your Name',
-              hintStyle: const TextStyle(color: Colors.white),
+              hintStyle: const TextStyle(color: whiteColor),
               focusedBorder: OutlineInputBorder(
                   borderSide: const BorderSide(
-                    color: Colors.yellow,
+                    color: yellowColor,
                   ),
                   borderRadius: BorderRadius.circular(15)),
               enabledBorder:
@@ -136,7 +136,7 @@ class WelcomeScreen2 extends StatelessWidget {
               ),
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-              fillColor: Colors.white.withOpacity(.3),
+              fillColor: whiteColor.withOpacity(.3),
               filled: true),
         ),
       ),
@@ -147,7 +147,7 @@ class WelcomeScreen2 extends StatelessWidget {
     return Container(
       height: 95,
       width: MediaQuery.of(context).size.width * 1,
-      color: const Color.fromARGB(146, 21, 10, 10),
+      color: welcomeScreenContainerColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -158,7 +158,7 @@ class WelcomeScreen2 extends StatelessWidget {
               Text(
                 'MUSIC IS THE LANGUAGE OF SOUL',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: whiteColor,
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.w700,
                     fontSize: 27,
@@ -177,7 +177,7 @@ class WelcomeScreen2 extends StatelessWidget {
               Text(
                 'A MUSIC PLAYER IS THE TRANSLATOR',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: whiteColor,
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.w700,
                     fontSize: 27,
@@ -224,7 +224,7 @@ class WelcomeScreen2 extends StatelessWidget {
     } else {
       ScaffoldMessenger.of(ctx).showSnackBar(const SnackBar(
           behavior: SnackBarBehavior.floating,
-          backgroundColor: Colors.red,
+          backgroundColor: redColor,
           margin: EdgeInsets.all(10),
           content: Text('Enter username Properly')));
     }

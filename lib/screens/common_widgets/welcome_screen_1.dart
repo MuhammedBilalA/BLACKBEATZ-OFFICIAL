@@ -1,4 +1,5 @@
 import 'package:action_slider/action_slider.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/welcomescreen_2.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class WelcomeScreen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+      backgroundColor: backgroundColorDark,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -34,19 +35,19 @@ class WelcomeScreen1 extends StatelessWidget {
 
   ActionSlider slideToContinue(BuildContext context) {
     return ActionSlider.standard(
-        backgroundColor: const Color.fromARGB(255, 60, 7, 93),
-        toggleColor: const Color.fromARGB(255, 159, 5, 255),
+        backgroundColor: actionSliderBagroundColorDark,
+        toggleColor: actionSliderToggleColor,
         icon: const Icon(
           Icons.navigate_next,
-          color: Colors.white,
+          color: whiteColor,
         ),
         successIcon: const Icon(
           Icons.check_rounded,
-          color: Colors.white,
+          color: whiteColor,
         ),
         failureIcon: const Icon(
           Icons.close_rounded,
-          color: Colors.white,
+          color: whiteColor,
         ),
         width: 250,
         actionThresholdType: ThresholdType.release,
@@ -54,7 +55,7 @@ class WelcomeScreen1 extends StatelessWidget {
           padding: EdgeInsets.only(left: 12),
           child: Text(
             'Slide to Continue',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: whiteColor),
           ),
         ),
         action: (controller) async {
@@ -77,7 +78,7 @@ class WelcomeScreen1 extends StatelessWidget {
             Text(
               'MUSIC CAN',
               style: TextStyle(
-                  color: Colors.white,
+                  color: whiteColor,
                   fontSize: 23,
                   height: 1,
                   fontWeight: FontWeight.w900),
@@ -89,7 +90,7 @@ class WelcomeScreen1 extends StatelessWidget {
               'CHANGE THE WORLD',
               style: TextStyle(
                   height: 1,
-                  color: Colors.white,
+                  color: whiteColor,
                   fontSize: 23,
                   fontWeight: FontWeight.w900),
             ),
@@ -98,7 +99,7 @@ class WelcomeScreen1 extends StatelessWidget {
               'THIS APP ALLOWS TO PLAY,ORGANIZE AND',
               style: TextStyle(
                   height: 1,
-                  color: Colors.yellow,
+                  color: yellowColor,
                   fontFamily: 'Peddana',
                   fontSize: 20,
                   fontStyle: FontStyle.italic,
@@ -111,7 +112,7 @@ class WelcomeScreen1 extends StatelessWidget {
               'RETREIVE MUSIC EASLY & QUICKLY',
               style: TextStyle(
                   height: .3,
-                  color: Colors.yellow,
+                  color: yellowColor,
                   fontFamily: 'Peddana',
                   fontSize: 20,
                   fontStyle: FontStyle.italic,
@@ -124,7 +125,7 @@ class WelcomeScreen1 extends StatelessWidget {
               'IDENTIFY THE MUSIC PLAYING AROUND YOU',
               style: TextStyle(
                   height: 1,
-                  color: Colors.white,
+                  color: whiteColor,
                   fontSize: 17,
                   fontWeight: FontWeight.w900),
             ),

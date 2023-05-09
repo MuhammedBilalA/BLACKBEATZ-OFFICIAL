@@ -1,4 +1,5 @@
 import 'package:black_beatz/main.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/welcomescreen_2.dart';
 import 'package:black_beatz/screens/favourite_screens/favourite.dart';
 import 'package:black_beatz/screens/mostly_played/mostly_played.dart';
@@ -22,13 +23,13 @@ class _UserScreenState extends State<UserScreen> {
     if (currentlyplaying != null) {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         showBottomSheet(
-            backgroundColor: Colors.transparent,
+            backgroundColor: transparentColor,
             context: context,
             builder: (context) => const MiniPlayer());
       });
     }
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 45, 10, 67),
+      backgroundColor: backgroundColorDark,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +43,7 @@ class _UserScreenState extends State<UserScreen> {
                       return const Text(
                         '',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: whiteColor,
                             fontFamily: 'Peddana',
                             fontSize: 30,
                             fontWeight: FontWeight.w900),
@@ -51,7 +52,7 @@ class _UserScreenState extends State<UserScreen> {
                       return Text(
                         snapshot.data!.toUpperCase(),
                         style: const TextStyle(
-                            color: Colors.white,
+                            color: whiteColor,
                             fontFamily: 'Peddana',
                             fontSize: 30,
                             fontWeight: FontWeight.w900),
@@ -84,7 +85,7 @@ class _UserScreenState extends State<UserScreen> {
                           child: Text(
                         'Edit Profile',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontWeight: FontWeight.bold,
                         ),
                       )),
@@ -147,7 +148,7 @@ class _UserScreenState extends State<UserScreen> {
                 child: Text(
                   'VERSION 1.0.0',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 233, 230, 230),
+                      color: versionTextColor,
                       fontSize: 9,
                       fontWeight: FontWeight.w400),
                 ),
@@ -164,7 +165,7 @@ class _UserScreenState extends State<UserScreen> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            backgroundColor: const Color.fromRGBO(240, 182, 255, 1),
+            backgroundColor: alertDialogBackgroundColor,
             content: const Text(
               'Edit Your Name',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -186,7 +187,7 @@ class _UserScreenState extends State<UserScreen> {
                         size: 30,
                       ),
                       border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.red),
+                          borderSide: const BorderSide(color: redColor),
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
@@ -200,7 +201,7 @@ class _UserScreenState extends State<UserScreen> {
                         Navigator.of(context).pop();
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
+                          backgroundColor: redColor,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 22,
                           ),
@@ -289,7 +290,7 @@ class UserWidgets extends StatelessWidget {
               child: Text(
                 title,
                 style: const TextStyle(
-                    color: Colors.white,
+                    color: whiteColor,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.italic,
                     fontSize: 25,

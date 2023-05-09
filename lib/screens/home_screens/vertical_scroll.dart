@@ -1,5 +1,6 @@
 import 'package:black_beatz/database/recent/recent_function/recent_functions.dart';
 import 'package:black_beatz/database/songs/songs_db_model/songs_db_model.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/common_widgets/hearticon.dart';
 import 'package:black_beatz/screens/common_widgets/listtilecustom.dart';
 import 'package:black_beatz/screens/favourite_screens/favourite.dart';
@@ -49,7 +50,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                         child: Text(
                           'Play Some Songs',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: whiteColor,
                               fontFamily: 'Peddana',
                               fontSize: 26),
                         ),
@@ -71,7 +72,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
               transform: Matrix4.translationValues(
                   startAnimation ? 0 : screenWidth, 0, 0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: whiteColor,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: InkWell(
@@ -79,7 +80,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                   playingAudio(recentListNotifier.value, index);
 
                   showBottomSheet(
-                      backgroundColor: Colors.transparent,
+                      backgroundColor: transparentColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
                       context: context,
@@ -94,12 +95,12 @@ class _VerticalScrollState extends State<VerticalScroll> {
                     recentListNotifier.value[index].songName ??= 'unknown',
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
+                        fontWeight: FontWeight.bold, color: whiteColor),
                   ),
                   subtitle: Text(
                     recentListNotifier.value[index].artist ??= 'unknown',
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: whiteColor),
                   ),
                   leading: QueryArtworkWidget(
                     size: 3000,
@@ -137,10 +138,10 @@ class _VerticalScrollState extends State<VerticalScroll> {
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
-                      color: const Color.fromARGB(255, 45, 10, 67),
+                      color: backgroundColorDark,
                       icon: const FaIcon(
                         FontAwesomeIcons.ellipsisVertical,
-                        color: Colors.white,
+                        color: whiteColor,
                         size: 26,
                       ),
                       itemBuilder: (context) => [
@@ -153,7 +154,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                                   Text(
                                     'ADD TO PLAYLIST',
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: whiteColor,
                                         fontWeight: FontWeight.w400,
                                         fontFamily: 'Peddana',
                                         height: 0.6,
@@ -161,7 +162,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                                   ),
                                   Icon(
                                     Icons.playlist_add,
-                                    color: Colors.white,
+                                    color: whiteColor,
                                   )
                                 ],
                               ),
@@ -175,7 +176,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                                   Text(
                                     'REMOVE FROM HISTORY',
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: whiteColor,
                                         fontWeight: FontWeight.w400,
                                         fontFamily: 'Peddana',
                                         height: 0.6,
@@ -183,7 +184,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                                   ),
                                   Icon(
                                     Icons.history,
-                                    color: Colors.white,
+                                    color: whiteColor,
                                   )
                                 ],
                               ),

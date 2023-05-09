@@ -1,4 +1,5 @@
 import 'package:black_beatz/database/playlist/playlist_function/playlist_function.dart';
+import 'package:black_beatz/screens/common_widgets/colors.dart';
 import 'package:black_beatz/screens/playlist_screens/playlist_class.dart';
 import 'package:black_beatz/screens/playlist_screens/playlist_unique_screen.dart';
 import 'package:flutter/material.dart';
@@ -39,9 +40,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xFF53147A),
+      backgroundColor: backgroundColorLight,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF53147A),
+        backgroundColor: backgroundColorLight,
         title: const Text(
           'PLAYLIST',
           style: TextStyle(
@@ -147,10 +148,10 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                             },
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15)),
-                            color: const Color.fromARGB(255, 45, 10, 67),
+                            color: backgroundColorDark,
                             icon: const FaIcon(
                               FontAwesomeIcons.ellipsisVertical,
-                              color: Colors.white,
+                              color: whiteColor,
                               size: 26,
                             ),
                             itemBuilder: (context) => [
@@ -164,7 +165,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                         Text(
                                           'Edit Playlist',
                                           style: TextStyle(
-                                              color: Colors.white,
+                                              color: whiteColor,
                                               fontWeight: FontWeight.w400,
                                               fontFamily: 'Peddana',
                                               height: 0.6,
@@ -172,7 +173,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                         ),
                                         Icon(
                                           Icons.edit,
-                                          color: Colors.white,
+                                          color: whiteColor,
                                           size: 20,
                                         )
                                       ],
@@ -188,7 +189,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                         Text(
                                           'Delete Playlist',
                                           style: TextStyle(
-                                              color: Colors.white,
+                                              color: whiteColor,
                                               fontWeight: FontWeight.w400,
                                               fontFamily: 'Peddana',
                                               height: 0.6,
@@ -196,7 +197,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                         ),
                                         Icon(
                                           Icons.delete_forever,
-                                          color: Colors.white,
+                                          color: whiteColor,
                                           size: 20,
                                         )
                                       ],
@@ -220,7 +221,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                             playListNotifier.value[index].name,
                             style: const TextStyle(
                                 height: 1,
-                                color: Colors.white,
+                                color: whiteColor,
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Peddana'),
@@ -243,7 +244,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            backgroundColor: const Color.fromRGBO(240, 182, 255, 1),
+            backgroundColor: alertDialogBackgroundColor,
             content: const Text(
               'Create New Playlist',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -273,7 +274,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         size: 30,
                       ),
                       border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.red),
+                          borderSide: const BorderSide(color: redColor),
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
@@ -289,7 +290,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         Navigator.of(context).pop();
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
+                          backgroundColor: redColor,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 22,
                           ),
@@ -331,7 +332,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            backgroundColor: const Color.fromRGBO(240, 182, 255, 1),
+            backgroundColor: alertDialogBackgroundColor,
             title: const Text(
               'Are you sure you want to delete',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -347,7 +348,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         Navigator.of(context).pop();
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
+                          backgroundColor: redColor,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 22,
                           ),
@@ -392,7 +393,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            backgroundColor: const Color.fromRGBO(240, 182, 255, 1),
+            backgroundColor: alertDialogBackgroundColor,
             content: const Text(
               'Rename Playlist',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -422,7 +423,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         size: 30,
                       ),
                       border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.red),
+                          borderSide: const BorderSide(color: redColor),
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
@@ -438,7 +439,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         Navigator.of(context).pop();
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
+                          backgroundColor: redColor,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 22,
                           ),
