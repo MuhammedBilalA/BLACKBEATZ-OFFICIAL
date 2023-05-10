@@ -146,7 +146,7 @@ class _UserScreenState extends State<UserScreen> {
               child: Padding(
                 padding: EdgeInsets.only(top: 45),
                 child: Text(
-                  'VERSION 1.0.0',
+                  'VERSION 1.0.1',
                   style: TextStyle(
                       color: versionTextColor,
                       fontSize: 9,

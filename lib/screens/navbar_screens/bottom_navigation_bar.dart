@@ -237,7 +237,7 @@ class _NavBarState extends State<NavBar> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'VERSION 1.0.0',
+                'VERSION 1.0.1',
                 style: TextStyle(
                     color:  versionTextColor,
                     fontSize: MediaQuery.of(context).size.height * 0.008,
