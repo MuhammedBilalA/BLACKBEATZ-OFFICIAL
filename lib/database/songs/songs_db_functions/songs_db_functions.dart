@@ -36,7 +36,8 @@ class Fetching {
     }
   }
 
-  //  request for permission of storage
+  //  request for permission 
+  //of storage
   Future requestPermission() async {
     var status = await Permission.storage.request();
     if (status.isGranted) {

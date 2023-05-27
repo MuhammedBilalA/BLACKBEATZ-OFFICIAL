@@ -105,6 +105,7 @@ class _VerticalScrollState extends State<VerticalScroll> {
                   leading: QueryArtworkWidget(
                     size: 3000,
                     quality: 100,
+                    keepOldArtwork: true,
                     artworkQuality: FilterQuality.high,
                     artworkBorder: BorderRadius.circular(10),
                     artworkFit: BoxFit.cover,

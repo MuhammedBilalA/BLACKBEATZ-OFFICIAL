@@ -357,6 +357,9 @@ class _NavBarState extends State<NavBar> {
                       const SizedBox(
                         width: 8,
                       ),
+
+
+                      
                       InkWell(
                         onTap: () async {
                           final Uri url = Uri.parse(
