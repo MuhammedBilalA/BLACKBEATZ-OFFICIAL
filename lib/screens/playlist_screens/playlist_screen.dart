@@ -15,6 +15,8 @@ class PlaylistScreen extends StatefulWidget {
 
 // ----playlistBodyNotifier for rebuilding the playlist body
 ValueNotifier playlistBodyNotifier = ValueNotifier([]);
+
+
 // ----playlistNotifier for  creating playlist objects and its contain the playlist name and container
 ValueNotifier<List<EachPlaylist>> playListNotifier = ValueNotifier([]);
 
